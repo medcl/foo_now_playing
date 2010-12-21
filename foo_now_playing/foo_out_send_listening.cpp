@@ -166,7 +166,7 @@ authstr+=":";
 authstr+=cfg_password;
 
 const char* URL="http://api.t.sina.com.cn/statuses/update.xml";		
-		pfc::string8 req_data="source=483394858&lat=0&long=0&status=#Now Listening#";
+pfc::string8 req_data="source=483394858&lat=0&long=0&status=#Now Listening# #%e6%88%91%e6%ad%a3%e5%9c%a8%e5%90%ac#";
 		file_info_impl track_info;
 		if (p_track->get_info(track_info))
 		{
