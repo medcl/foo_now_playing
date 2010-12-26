@@ -6,7 +6,7 @@
 #include "resource.h"
 #pragma comment(lib, "libcurl.lib")
 
-DECLARE_COMPONENT_VERSION("foo_now_listening", "0.1", "Medcl's Now Listening Plugin For SinaMiniblo & Foobar 2000.<author:http://log.medcl.net mail:m@medcl.net> ");
+DECLARE_COMPONENT_VERSION("foo_now_listening", "0.2", "Medcl's Now Listening Plugin For SinaMiniblo & Foobar 2000.<author:http://log.medcl.net mail:m@medcl.net> ");
 VALIDATE_COMPONENT_FILENAME("foo_now_listening.dll");
 
 
@@ -166,7 +166,7 @@ authstr+=":";
 authstr+=cfg_password;
 
 const char* URL="http://api.t.sina.com.cn/statuses/update.xml";		
-pfc::string8 req_data="source=483394858&lat=0&long=0&status=#Now Listening# #%e6%88%91%e6%ad%a3%e5%9c%a8%e5%90%ac#";
+pfc::string8 req_data="source=483394858&lat=0&long=0&status=%e6%88%91%e6%ad%a3%e5%9c%a8%e5%90%ac ";
 		file_info_impl track_info;
 		if (p_track->get_info(track_info))
 		{
@@ -185,7 +185,7 @@ pfc::string8 req_data="source=483394858&lat=0&long=0&status=#Now Listening# #%e6
 			req_data+=track_album;
 			req_data+=" ";*/
 			req_data+=track_artist;
-			req_data+="-";
+			req_data+="--";
 			req_data+=track_title;
 
     curl = curl_easy_init();
